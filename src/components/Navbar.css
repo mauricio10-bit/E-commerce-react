@@ -1,0 +1,13 @@
+.nav-link, .user{
+    transition: background-color 0.3s, color 0.3s;
+    padding: 8px 16px;
+    border-radius: 8px;
+    margin-right: 8px;
+  }
+  
+  .nav-link:hover, .user:hover{
+    background-color: #645514;
+    color: white !important;
+  }
+  
+  
