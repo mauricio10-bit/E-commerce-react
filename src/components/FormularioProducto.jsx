@@ -56,10 +56,10 @@ export default function FormularioProducto() {
         <div className="container mt-3">
             <form onSubmit={handleSubmit} className="formulario-producto">
                 <h2>{editando ? 'Editar' : 'Crear'} Producto</h2>
-                <input style={{ width: '30%' }} className='form-control mb-2' name='nombre' placeholder="Nombre" value={producto.nombre} onChange={handleChange} required />
-                <input style={{ width: '30%' }} className='form-control mb-2' name="precio" placeholder="Precio" value={producto.precio} onChange={handleChange} required />
-                <input style={{ width: '30%' }} className='form-control mb-2' name="imagen" placeholder="URL de imagen" value={producto.imagen} onChange={handleChange} required />
-                <input style={{ width: '30%' }} className='form-control mb-2' name="categoria" placeholder="Categoría" value={producto.categoria} onChange={handleChange} />
+                <input className='form-control mb-2' name='nombre' placeholder="Nombre" value={producto.nombre} onChange={handleChange} required />
+                <input className='form-control mb-2' name="precio" placeholder="Precio" value={producto.precio} onChange={handleChange} required />
+                <input className='form-control mb-2' name="imagen" placeholder="URL de imagen" value={producto.imagen} onChange={handleChange} required />
+                <input className='form-control mb-2' name="categoria" placeholder="Categoría" value={producto.categoria} onChange={handleChange} />
 
                 <div className="form-check mb-2">
                     <input className='form-check-input' type='checkbox' name="destacado" checked={producto.destacado} onChange={handleChange} />
