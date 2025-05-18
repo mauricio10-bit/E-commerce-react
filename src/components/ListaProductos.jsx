@@ -22,9 +22,9 @@ export default function ListaProductos() {
     <div className="lista-productos ">
       <div className="row">
         {productos.map(producto => (
-          <div className="col-md-4">
+          <div key={producto.id} className="col-md-4">
             <div className="card d-flex flex-column text-center justify-content-center align-items-center mb-4">
-              <div key={producto.id} className="producto">
+              <div className="producto">
                 <img src={producto.imagen} alt={producto.nombre} width="200" height="200"/>
                 <div className='mb-5'>
                   <h3>{producto.nombre}</h3>

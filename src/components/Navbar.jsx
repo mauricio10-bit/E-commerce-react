@@ -8,7 +8,7 @@ function Navbar() {
   const { isAdmin } = useAdmin()
 
   return (
-    <nav style={{ backgroundColor: '#ffd000' }} className="navbar navbar-expand-lg" data-bs-theme="light">
+    <nav style={{ backgroundColor: '#00f5d7' }} className="navbar navbar-expand-lg" data-bs-theme="light">
       <div className="container d-flex justify-content-between align-items-center">
 
         <Link className="navbar-brand" to="/"><b>Jema Store</b></Link>
@@ -38,11 +38,9 @@ function Navbar() {
 
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
-            {isAdmin && (
               <li className="nav-item">
                 <Link className="nav-link" to="/admin/productos">Admin</Link>
               </li>
-            )}
             <li className="nav-item">
               <Link className="nav-link" to="/store">Tienda</Link>
             </li>

@@ -8,15 +8,21 @@ function AdminProductos() {
   if (loading) {
     return (
       <div className="d-flex justify-content-center mt-5">
-        <div style={{ width: '4rem', height: '4rem', borderWidth: '0.5rem'}} class="spinner-border text-primary" role="status">
-          <span class="visually-hidden">Loading...</span>
+        <div style={{ width: '4rem', height: '4rem', borderWidth: '0.5rem'}} className="spinner-border text-primary" role="status">
+          <span className="visually-hidden">Loading...</span>
         </div>
       </div>
     )
   }
 
 
-  if (!isAdmin) return <p>No tienes permisos para acceder a esta página.</p>
+  if (!isAdmin) {
+    return (
+      <div className="container text-center mt-5">
+        <p style={{backgroundColor: '#730000'}} className='badge fs-3'>No tienes permisos para acceder a esta pagina</p>
+      </div>
+    )
+  } 
 
   return (
     <div className="container mt-4">
