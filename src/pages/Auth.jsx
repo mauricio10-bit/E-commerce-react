@@ -10,7 +10,7 @@ import { useAuth } from '../context/AuthContext'
 import UserInfo from '../components/UserInfo'
 
 function Auth() {
-    const { user } = useAuth()
+    const { user, mostrarAlerta } = useAuth()
     const [isLogin, setIsLogin] = useState(true)
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -21,12 +21,14 @@ function Auth() {
         try {
             if (isLogin) {
                 await signInWithEmailAndPassword(auth, email, password)
+                mostrarAlerta('Sesión iniciada correctamente', 'success')
             } else {
                 await createUserWithEmailAndPassword(auth, email, password)
+                mostrarAlerta('Usuario registrado correctamente', 'success')
             }
             navigate('/store')
         } catch (error) {
-            alert(error.message)
+            mostrarAlerta('Error: ' + error.message, 'danger')
         }
     }
 

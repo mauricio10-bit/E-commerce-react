@@ -9,6 +9,7 @@ import AdminRoute from './context/AdminRoute'
 import AdminProductos from './components/AdminProductos'
 import FormularioProducto from './components/FormularioProducto'
 import ListaProductos from './components/ListaProductos'
+import AlertaGlobal from './components/AlertaGlobal'
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
           </ProtectedRoute>
         } />
       </Routes>
+      <AlertaGlobal />
     </>
   )
 }

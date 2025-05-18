@@ -4,6 +4,7 @@ const CartContext = createContext()
 
 export function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState([])
+  const [alertas, setAlertas] = useState([])
 
   const addToCart = producto => {
     setCartItems(prev => {
@@ -16,6 +17,13 @@ export function CartProvider({ children }) {
         return [...prev, { ...producto, cantidad: 1 }]
       }
     })
+
+    const id = Date.now()
+    setAlertas(prev => [...prev, { id, mensaje: `${producto.nombre} agregado al carrito` }])
+
+    setTimeout(() => {
+      setAlertas(prev => prev.filter(alerta => alerta.id !== id))
+    }, 3000)
   }
 
   const increaseQuantity = id => {
@@ -25,7 +33,7 @@ export function CartProvider({ children }) {
       )
     )
   }
-  
+
   const decreaseQuantity = id => {
     setCartItems(prev =>
       prev
@@ -43,7 +51,7 @@ export function CartProvider({ children }) {
   const clearCart = () => setCartItems([])
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, clearCart, increaseQuantity, decreaseQuantity }}>
+    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, clearCart, increaseQuantity, decreaseQuantity, alertas }}>
       {children}
     </CartContext.Provider>
   )
